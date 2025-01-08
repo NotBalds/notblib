@@ -1,5 +1,3 @@
-use std::any::type_name;
-
 pub mod crypt;
 pub mod fs;
 pub mod get;
