@@ -22,4 +22,7 @@ url = "2.5.4"
 toml = "0.8.19"
 rsa = { version = "0.9.7", features = ["sha2"] }
 thiserror = "2.0.9"
-embedded-websocket = "0.9.4"
+tungstenite = "0.26.1"
+aes-gcm-siv = "0.11.1"
+randomizer = "0.1.2"
+ecies = {version = "0.2", default-features = false, features = ["pure"]}
