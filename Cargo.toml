@@ -3,10 +3,10 @@ name = "notblib"
 version = "0.1.0"
 description = "Lib for NotBalds projects"
 authors = ["icelayer"]
-license = ""
-repository = ""
+license = "GNU GPL"
+repository = "https://github.com/NotBalds/notblib"
 edition = "2021"
-rust-version = "1.78"
+rust-version = "1.68"
 
 [dependencies]
 base64 = "0.21.0"
