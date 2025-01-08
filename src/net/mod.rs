@@ -4,12 +4,12 @@ pub mod ws;
 use http::HTTPClient;
 use ws::WSClient;
 
-enum Proto {
+pub enum Proto {
     WS,
     HTTP,
 }
 
-enum NetClient {
+pub enum NetClient {
     HTTP(HTTPClient),
     WS(WSClient),
 }

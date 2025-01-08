@@ -1,14 +1,7 @@
 use crate::AnyError;
-use std::{
-    error,
-    io::{Error, Read, Write},
-    net::TcpStream,
-};
-use tungstenite::{
-    client,
-    Message::{Binary, Close},
-    WebSocket,
-};
+use std::net::TcpStream;
+pub use tungstenite::Message::{Binary, Close};
+use tungstenite::{client, WebSocket};
 use url::Url;
 
 pub struct WSClient {}
