@@ -9,6 +9,4 @@ pub mod status;
 #[cfg(test)]
 mod tests;
 
-pub fn type_of<T>(_: T) -> &'static str {
-    type_name::<T>()
-}
+type AnyError = Box<dyn std::error::Error>;
