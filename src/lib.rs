@@ -1,4 +1,5 @@
 pub mod crypt;
+pub mod fmt;
 pub mod fs;
 pub mod get;
 pub mod net;
