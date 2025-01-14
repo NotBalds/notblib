@@ -4,7 +4,7 @@ version = "0.2.0"
 description = "Lib for NotBalds projects"
 authors = ["icelayer"]
 license = "GPL-3.0+"
-repository = "https://github.com/NotBalds/notblib"
+repository = "https://github.com/NotBalds/notblib-rs"
 edition = "2021"
 rust-version = "1.68"
 
@@ -25,4 +25,4 @@ thiserror = "2.0.9"
 tungstenite = "0.26.1"
 aes-gcm-siv = "0.11.1"
 randomizer = "0.1.2"
-ecies = {version = "0.2", default-features = false, features = ["pure"]}
+ecies = { version = "0.2", default-features = false, features = ["pure"] }
