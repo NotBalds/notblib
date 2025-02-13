@@ -4,14 +4,16 @@ pub use tungstenite::Message::{Binary, Close};
 use tungstenite::{client, WebSocket};
 use url::Url;
 
-pub struct WSClient {}
+pub struct WSClient {
+    pub socket: Option<WebSocket<TcpStream>>,
+}
 
 impl WSClient {
     pub fn new() -> Self {
-        WSClient {}
+        WSClient { socket: None }
     }
 
-    pub fn connect(url: &str) -> Result<WebSocket<TcpStream>, AnyError> {
+    pub fn connect(url: &str) -> Result<Self, AnyError> {
         let url = Url::parse(url)?;
 
         let host = url.host_str().ok_or("Incorrect hostname")?;
@@ -22,6 +24,8 @@ impl WSClient {
 
         let (ws_stream, _) = client(url.as_str(), stream)?;
 
-        Ok(ws_stream)
+        Ok(Self {
+            socket: Some(ws_stream),
+        })
     }
 }

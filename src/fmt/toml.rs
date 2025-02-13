@@ -5,8 +5,7 @@ pub fn from<T>(data: &dyn ToString) -> Result<T, Box<dyn Error>>
 where
     T: serde::de::DeserializeOwned,
 {
-    let result: T =
-        toml::de::from_str(&data.to_string()).map_err(|e| Box::new(e) as Box<dyn Error>)?;
+    let result: T = toml::from_str(&data.to_string()).map_err(|e| Box::new(e) as Box<dyn Error>)?;
     Ok(result)
 }
 

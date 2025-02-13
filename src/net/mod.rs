@@ -14,13 +14,19 @@ pub enum NetClient {
     WS(WSClient),
 }
 
-pub struct Client {}
+pub struct Client {
+    inner: NetClient,
+}
 
 impl Client {
-    pub fn new(proto: Proto) -> Result<NetClient, crate::AnyError> {
+    pub fn new(proto: Proto) -> Result<Self, crate::AnyError> {
         match proto {
-            Proto::WS => Ok(NetClient::WS(WSClient::new())),
-            Proto::HTTP => Ok(NetClient::HTTP(HTTPClient::new())),
+            Proto::WS => Ok(Client {
+                inner: NetClient::WS(WSClient::new()),
+            }),
+            Proto::HTTP => Ok(Client {
+                inner: NetClient::HTTP(HTTPClient::new()),
+            }),
         }
     }
 }
