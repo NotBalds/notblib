@@ -3,7 +3,7 @@ pub mod fmt;
 pub mod fs;
 pub mod get;
 pub mod net;
-pub mod status;
+pub mod stat;
 
 #[cfg(test)]
 mod tests;

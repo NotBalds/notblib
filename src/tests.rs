@@ -1,12 +1,12 @@
 #[test]
-fn status_test() {
-    use crate::status;
+fn stat_test() {
+    use crate::stat;
 
-    status::process("Test process status");
-    status::success("Test success status");
-    status::warning("Test warning status");
-    status::error("Test error status");
-    status::fatal("Test fatal status");
+    stat::process("Test process status");
+    stat::success("Test success status");
+    stat::warning("Test warning status");
+    stat::error("Test error status");
+    stat::fatal("Test fatal status");
 }
 
 #[test]
