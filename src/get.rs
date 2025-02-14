@@ -18,7 +18,6 @@ pub fn input<P: AsRef<str>>(prompt: P) -> Result<String, Error> {
 pub fn agreement<P: AsRef<str>>(prompt: P) -> Result<bool, Error> {
     loop {
         let txt = input(prompt.as_ref())?;
-        println!("{}", txt);
         match txt.as_str() {
             "y" | "Y" => return Ok(true),
             "n" | "N" => return Ok(false),
