@@ -15,6 +15,18 @@ pub fn input<P: AsRef<str>>(prompt: P) -> Result<String, Error> {
     Ok(input.trim().to_owned())
 }
 
+pub fn agreement<P: AsRef<str>>(prompt: P) -> Result<bool, Error> {
+    loop {
+        let txt = input(prompt.as_ref())?;
+        println!("{}", txt);
+        match txt.as_str() {
+            "y" | "Y" => return Ok(true),
+            "n" | "N" => return Ok(false),
+            _ => continue,
+        }
+    }
+}
+
 pub fn url<P: AsRef<str>>(prompt: P) -> Result<String, Error> {
     loop {
         match Url::parse(&input(&prompt)?).map_err(|_| ()) {
