@@ -40,6 +40,15 @@ impl Key {
     }
 }
 
+impl From<([u8; 32], [u8; 12])> for Key {
+    fn from(value: ([u8; 32], [u8; 12])) -> Self {
+        Key {
+            key_bytes: value.0,
+            nonce: value.1,
+        }
+    }
+}
+
 pub fn encrypt(key: &Key, data: Vec<u8>) -> Result<Vec<u8>, Box<dyn Error>> {
     let cipher = Aes256GcmSiv::new_from_slice(key.bytes())?;
 
