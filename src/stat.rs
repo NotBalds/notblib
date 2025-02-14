@@ -1,5 +1,9 @@
 use colored::Colorize;
 
+pub fn info<D: AsRef<str>>(data: D) {
+    println!("{} {}", "[?]".bold().white(), data.as_ref());
+}
+
 pub fn process<D: AsRef<str>>(data: D) {
     println!("{} {}", "[.]".bold().white(), data.as_ref());
 }
