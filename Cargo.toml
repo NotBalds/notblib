@@ -1,6 +1,6 @@
 [package]
 name = "notblib"
-version = "0.2.6"
+version = "0.2.7"
 description = "Lib for NotBalds projects"
 authors = ["icelayer"]
 license = "GPL-3.0+"
